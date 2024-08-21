@@ -1,41 +1,41 @@
-# Skip-the-dishes-scraper
+# Skip-the-Dishes Scraper
 
-**Install necessary libraries**:
-- pip3 install -U selenium
-- pip3 install pandas
-_____________
+This repository contains a web scraping project designed to extract restaurant information from the Skip-the-Dishes website. The project uses Selenium for automating the data extraction process and outputs the information into Excel files.
 
-**Process to run the program**
+## Installation
 
-Retrieve the GitHub repository, and execute the `main.py` script. 
+To run this project, you'll need to install the necessary dependencies. Use the following command to install the required libraries:
 
-Within the `main.py` script, you have the option to input your address on line 26. Once you've made this adjustment, run the script. This will initiate the automation process, allowing you to extract data from the website.
+```bash
+pip install -r requirements.txt
+```
 
-I have used `geckodriver.exe` which is saved in the same folder and the path is passed in `driver = webdriver.Firefox(executable_path="geckodriver.exe")`
-_____________________
-What is `geckodriver.exe`?
+Ensure you have Python and pip installed on your system.
 
-`geckodriver.exe` is a component of the Mozilla Gecko rendering engine, primarily used for automating web browser actions. It is commonly associated with the Firefox web browser and facilitates interactions between your code (written in a programming language like Python, Java, etc.) and the browser.
+## How to Use
 
-When you're using tools like Selenium for web automation, you often need a WebDriver specific to the browser you're automating. `geckodriver` serves as the WebDriver for Firefox. It enables your code to open a Firefox browser window, manipulate web pages, and perform actions such as clicking buttons, filling out forms, and scraping data from websites.
+1. **Retrieve the GitHub Repository:**
+   - Clone this repository to your local machine.
 
-If you're running automation scripts that involve Firefox browser actions, you typically need to download the appropriate version of `geckodriver.exe` compatible with your system and your version of the Firefox browser. This executable acts as a bridge between your automation code and the browser itself, allowing you to control and interact with the browser programmatically.
+2. **Execute the `main.py` Script:**
+   - Open the `main.py` script in a code editor.
+   - On line 27, you'll find an option to input your address. Replace the default address with your desired address.
+     ```python
+     address_box.send_keys("23 bothwell crescent")
+     ```
+   - After making the necessary adjustments, save the file and run the script. This will start the automation process, extracting data from the Skip-the-Dishes website.
 
-____________________________
-Once the scraping procedure wraps up, you'll end up with two Excel files as outcomes. 
+3. **Results:**
+   - Once the scraping process completes, you will find two Excel files generated in the directory:
+     1. **`links-for-nearby-restaurants.csv`**: Contains a list of URLs for the nearby restaurants.
+     2. **`Final_data.csv`**: Contains detailed information about each restaurant, such as names, addresses, and other relevant details.
+   - These files will provide you with a comprehensive overview of the restaurants around the specified address.
 
-The initial one, named `links-for-nearby-restaurants.csv` will encompass a collection of URLs pointing to various restaurants. 
+## Pre-existing Data
 
-The second file, labeled `Final_data.csv` will contain comprehensive details about individual restaurants, including their names, addresses, and other pertinent information.
+In the repository, you'll notice two Excel files already containing essential data. These files focus on restaurants located near the address:
 
-To put it simply, after the scraping is done, you'll get one Excel file containing restaurant web links and another Excel file with comprehensive restaurant information like names and addresses.
-__________________________
-In this repository, you'll notice two pre-existing Excel files that already hold the essential data. 
+- **23 Bothwell Crescent, Barrie**
 
-This data is specifically centered around restaurants located in proximity to the address `17 Dunsmore Lane, Barrie`.
-
-As we previously talked about, you have the flexibility to modify this address according to your needs. Once you make this adjustment and execute the script, you'll obtain the specific information you're seeking.
-
-
-
+Feel free to modify the address in the `main.py` script according to your needs. After doing so and running the script, you'll obtain specific information for the new location.
 
