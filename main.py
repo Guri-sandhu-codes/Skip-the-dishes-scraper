@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import pandas as pd
 
-driver = webdriver.Firefox(executable_path="geckodriver.exe")
+driver = webdriver.Firefox()
 
 driver.maximize_window()
 
@@ -20,20 +20,22 @@ except:
     pass
 
 #getting the address box element
-address_box = driver.find_element(By.XPATH,"/html/body/div[2]/div/main/div/div/div[2]/div[2]/div/div/div/div/div[1]/div[1]/div[2]/form/input")
+address_box = driver.find_element(By.XPATH,"/html/body/div[1]/div/main/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/div[1]/div/input")
+
 
 #passing the address in address box - you can pass your address here
-address_box.send_keys("17 Dunsmore Lane, Barrie, ON, Canada")
+address_box.send_keys("23 bothwell crescent")
 
 time.sleep(2)
 
-#Sending Enter Key to enter the address
-address_box.send_keys(Keys.ENTER)
+x = driver.find_element(By.XPATH,'/html/body/div[1]/div/main/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/ul/li[1]')
+
+x.click()
 
 time.sleep(2)
 
 #clicking the search button below the address
-search = driver.find_element(By.XPATH,"/html/body/div[2]/div/main/div/div/div[2]/div[1]/div/div/div/div/div[4]/button")
+search = driver.find_element(By.XPATH,"/html/body/div[1]/div/main/div[1]/div[1]/div[2]/div/div[3]/button")
 
 search.click()
 time.sleep(2)
